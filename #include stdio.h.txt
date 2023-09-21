@@ -1,0 +1,37 @@
+
+
+
+// bubblesort
+#include <stdio.h>
+
+int main() {
+    int i, aux, flag;
+    int lista[10];
+    
+    for (i = 0; i <= 9; i++) {
+        printf("item %d:", i + 1); // fazer com que o usuario insira o primeiro item e assim sucessivamente.
+        scanf("%d", &lista[i]);
+    }
+    
+    flag = 1; // verificação para ver se os pares ja estão ordenados.
+    
+    while (flag) {
+        flag = 0; // informa que os valores estão ordenados
+        
+        for (i = 0; i <= 8; i++) {
+            if (lista[i] > lista[i + 1]) {
+                aux = lista[i];
+                lista[i] = lista[i + 1];
+                lista[i + 1] = aux;
+                flag = 1;// revisão dos valores.
+            }
+        }
+    }
+    
+    for (i = 0; i <= 9; i++) {// poder fazer mostrar os valores arrumados do bubblesort.
+        printf("item %d: %d\n", i + 1, lista[i]);
+    }
+    
+    return 0;
+}
+
